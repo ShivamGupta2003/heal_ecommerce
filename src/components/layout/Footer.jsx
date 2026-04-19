@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
-  { label: 'Our Director', to: '/director' },
+
   { label: 'Services', to: '/services' },
   { label: 'Patient Guidelines', to: '/patient-guidelines' },
   { label: 'Gallery', to: '/gallery' },
@@ -39,24 +39,25 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div style={{
-                width: 44,
-                height: 44,
-                borderRadius: "10px",
-                background: "linear-gradient(135deg, #e8721c, #c45a10)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}>
-                <span style={{ color: "#fff", fontWeight: 700 }}>N</span>
-              </div>
+
+              <img
+                src="/logo.png"
+                alt="Patatram Logo"
+                style={{
+                  width: 44,
+                  height: 44,
+                  objectFit: "contain",
+                  borderRadius: "8px"
+                }}
+              />
 
               <div>
-                <div className="text-white font-bold text-lg">NeuroVita</div>
+                <div className="text-white font-bold text-lg">Patatram</div>
                 <div className="text-xs text-orange-400 uppercase tracking-widest">
                   Rehabilitation
                 </div>
               </div>
+
             </Link>
 
             <p className="text-white/60 text-sm leading-relaxed">
@@ -109,14 +110,15 @@ export default function Footer() {
               <div className="flex gap-2">
                 <MapPin size={14} className="text-orange-400 mt-1" />
                 <span>
-                  12 Healing Path, Sector 44 <br />
-                  New Delhi – 110044, India
+                  Near Gwari Railway Crossing,
+                  Gomti Nagar Ext Phase-II,
+                  Lucknow, UP – 226010
                 </span>
               </div>
 
               <div className="flex gap-2">
                 <Phone size={14} className="text-orange-400 mt-1" />
-                <span>+91 12345 67890</span>
+                <span>+91-9889156355</span>
               </div>
 
               <div className="flex gap-2">

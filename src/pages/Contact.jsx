@@ -45,13 +45,13 @@ async function sendEmail(form) {
 /* ── Shared field styles (VisionMission palette, no bg) ── */
 const labelSt = {
   display: 'block',
-  fontFamily: "'Courier New', Courier, monospace",
-  fontSize: '0.6rem',
-  letterSpacing: '0.22em',
-  textTransform: 'uppercase',
+  // fontFamily: "'Georgia', 'Times New Roman', serif",
+  // fontFamily: "'Courier New', Courier, monospace",
+  fontSize: '0.9rem',
+  // textTransform: 'uppercase',
   color: T.accent,
   marginBottom: '7px',
-  fontWeight: 700,
+  fontWeight: 600,
 }
 
 const inputSt = {
@@ -166,10 +166,7 @@ function ContactForm() {
           color: '#fff',
           border: 'none',
           padding: '13px 32px',
-          fontFamily: "'Courier New', Courier, monospace",
-          fontSize: '0.7rem',
-          letterSpacing: '0.18em',
-          textTransform: 'uppercase',
+          fontSize: '0.9rem',
           fontWeight: 700,
           borderRadius: '999px',                           /* rounded-full like hero btn */
           cursor: loading ? 'not-allowed' : 'pointer',
@@ -188,8 +185,8 @@ function ContactForm() {
 /* ── Sidebar info data ── */
 const contactInfo = [
   { icon: MapPin, label: 'Address', lines: ['Near Gwari Railway Crossing,', 'Gomti Nagar Ext Phase-II,', 'Lucknow, UP – 226010'] },
-  { icon: Phone, label: 'Phone', lines: ['+91 95590 90577'] },
-  { icon: Mail, label: 'Email', lines: ['shivamgupta90353@gmail.com'] },
+  { icon: Phone, label: 'Phone', lines: ['+91-9889156355', '+91-6389804084'] },
+  { icon: Mail, label: 'Email', lines: ['patatramrehab.1@gmail.com'] },
   { icon: Clock, label: 'Hours', lines: ['Mon – Sat: 7:30 AM – 5:00 PM', 'Sunday: Closed'] },
 ]
 
@@ -253,8 +250,9 @@ export default function Contact() {
           minHeight: "50vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-start", // 👈 move content to left
+          justifyContent: "center", // 👈 move content to left
           overflow: "hidden",
+
         }}
       >
         {/* Background image with blur */}
@@ -285,9 +283,11 @@ export default function Contact() {
             position: "relative",
             zIndex: 10,
             padding: "88px 24px 80px",
-            maxWidth: 600,
-            marginLeft: "80px", // 👈 push content from left
-            textAlign: "left", // 👈 align text left
+            maxWidth: 1000,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
         >
 
@@ -303,6 +303,7 @@ export default function Contact() {
               color: "#fff",
               lineHeight: 1.2,
               marginBottom: 18,
+              textAlign: 'center'
             }}
           >
             Begin Your Path to{" "}
@@ -334,29 +335,7 @@ export default function Contact() {
             find out how we can help. We typically respond within 24 hours.
           </motion.p>
 
-          <motion.a
-            href="#contact-form"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            style={{
-              display: "inline-block",
-              padding: "14px 36px",
-              background: "#38bdf8",
-              color: "#fff",
-              fontFamily: "'Courier New', Courier, monospace",
-              fontSize: "0.7rem",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              fontWeight: 700,
-              borderRadius: "999px",
-              textDecoration: "none",
-              boxShadow: "0 4px 18px rgba(56,189,248,0.35)",
-              transition: "all 0.2s ease",
-            }}
-          >
-            Book Appointment
-          </motion.a>
+
         </div>
       </section>
 
@@ -410,7 +389,7 @@ export default function Contact() {
               {/* Mini label */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 28 }}>
                 <div style={{ width: 3, height: 26, borderRadius: 2, background: '#c47b3c' }} />
-                <p style={{ fontFamily: "'Courier New', Courier, monospace", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b86830' }}>
+                <p style={{ fontSize: '1.0rem', color: '#b86830' }}>
                   Fill in the form and we'll be in touch shortly.
                 </p>
               </div>
@@ -443,7 +422,7 @@ export default function Contact() {
                     <info.icon size={16} color="#c47b3c" />
                   </div>
                   <div>
-                    <div style={{ fontFamily: "'Courier New', Courier, monospace", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b86830', marginBottom: 5 }}>
+                    <div style={{ fontSize: '0.8rem', color: '#b86830', marginBottom: 5 }}>
                       {info.label}
                     </div>
                     {info.lines.map((line, j) => (
@@ -467,11 +446,11 @@ export default function Contact() {
                   border: `1.5px solid rgba(196,123,60,0.35)`,
                 }}
               >
-                <div style={{ fontFamily: "'Courier New', Courier, monospace", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b86830', marginBottom: 8 }}>
+                <div style={{ fontSize: '0.8rem', color: '#b86830', marginBottom: 8 }}>
                   24 / 7 Emergency
                 </div>
                 <div style={{ fontFamily: "'Georgia', 'Times New Roman', serif", fontSize: 22, color: '#2d1a0e', fontWeight: 700, marginBottom: 6 }}>
-                  +91 95590 90577
+                  +91-9889156355
                 </div>
                 <p style={{ color: '#7a5c44', fontSize: 12.5, fontFamily: "'Georgia', 'Times New Roman', serif", lineHeight: 1.65 }}>
                   For urgent rehabilitation needs or post-discharge concerns.
@@ -528,9 +507,8 @@ export default function Contact() {
               background: '#38bdf8',             /* sky-400 — HeroSection */
               color: '#fff',
               padding: '12px 28px', borderRadius: '999px',  /* rounded-full */
-              fontFamily: "'Courier New', Courier, monospace",
-              fontSize: '0.7rem', letterSpacing: '0.18em',
-              textTransform: 'uppercase', fontWeight: 700,
+              fontSize: '0.9rem',
+              fontWeight: 700,
               textDecoration: 'none',
               boxShadow: '0 4px 14px rgba(56,189,248,0.28)',
               transition: 'background 0.2s, box-shadow 0.2s, transform 0.1s'

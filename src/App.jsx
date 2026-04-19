@@ -5,7 +5,7 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
-import Director from './pages/Director'
+
 import Services from './pages/Services'
 import PatientGuidelines from './pages/PatientGuidelines'
 import Gallery from './pages/Gallery'
@@ -29,7 +29,7 @@ function AppRoutes() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/director" element={<Director />} />
+
           <Route path="/services" element={<Services />} />
           <Route path="/patient-guidelines" element={<PatientGuidelines />} />
           <Route path="/gallery" element={<Gallery />} />
