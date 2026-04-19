@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ArrowRight } from 'lucide-react'
+import { Phone, MapPin, Clock, Facebook, Instagram, Linkedin, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const quickLinks = [
@@ -14,116 +14,145 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 text-primary-100">
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer style={{
+      background: "linear-gradient(160deg, #0f172a 0%, #1e293b 100%)",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+
+      {/* Glow Effects */}
+      <div className="absolute top-0 right-0 w-96 h-96"
+        style={{ background: "radial-gradient(circle, rgba(232,114,28,0.10) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-0 left-0 w-80 h-80"
+        style={{ background: "radial-gradient(circle, rgba(61,184,200,0.07) 0%, transparent 70%)" }} />
+
+      {/* Top Line */}
+      <div style={{
+        height: "3px",
+        background: "linear-gradient(90deg, transparent, #e8721c 30%, #3db8c8 70%, transparent)",
+      }} />
+
+      {/* Main Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary-500 flex items-center justify-center">
-                <span className="text-cream font-display font-bold text-lg">N</span>
+              <div style={{
+                width: 44,
+                height: 44,
+                borderRadius: "10px",
+                background: "linear-gradient(135deg, #e8721c, #c45a10)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}>
+                <span style={{ color: "#fff", fontWeight: 700 }}>N</span>
               </div>
+
               <div>
-                <div className="font-display font-bold text-white text-lg leading-none">NeuroVita</div>
-                <div className="font-mono text-[10px] text-primary-300 tracking-widest uppercase">Rehabilitation</div>
+                <div className="text-white font-bold text-lg">NeuroVita</div>
+                <div className="text-xs text-orange-400 uppercase tracking-widest">
+                  Rehabilitation
+                </div>
               </div>
             </Link>
-            <p className="text-primary-300 text-sm leading-relaxed mb-6">
-              Transforming lives through evidence-based, compassionate rehabilitation medicine. Our expert team is dedicated to your complete recovery.
+
+            <p className="text-white/60 text-sm leading-relaxed">
+              Transforming lives through compassionate, evidence-based rehabilitation care.
             </p>
-            <div className="flex items-center gap-3">
-              {[
-                { icon: Facebook, href: '#' },
-                { icon: Instagram, href: '#' },
-                { icon: Linkedin, href: '#' },
-              ].map(({ icon: Icon, href }, i) => (
-                <a
+
+            {/* Social */}
+            <div className="flex gap-3 mt-4">
+              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                <motion.a
                   key={i}
-                  href={href}
-                  className="w-9 h-9 border border-primary-600 flex items-center justify-center text-primary-300 hover:bg-primary-600 hover:text-white transition-all"
+                  href="#"
+                  whileHover={{ scale: 1.1 }}
+                  className="w-9 h-9 flex items-center justify-center border border-orange-400/40 rounded-lg text-white/50 hover:text-orange-400 hover:border-orange-400 transition"
                 >
-                  <Icon size={16} />
-                </a>
+                  <Icon size={15} />
+                </motion.a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-display text-white text-lg mb-6">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-orange-400 text-xs uppercase tracking-widest mb-4">
+              Quick Links
+            </h3>
+
+            <div className="flex flex-col gap-2">
               {quickLinks.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="text-primary-300 hover:text-white text-sm flex items-center gap-2 group transition-colors"
-                  >
-                    <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {link.label}
-                  </Link>
-                </li>
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-white/60 hover:text-white text-sm flex items-center gap-2 transition"
+                >
+                  <ArrowRight size={12} className="text-orange-400" />
+                  {link.label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-display text-white text-lg mb-6">Contact Us</h3>
-            <ul className="space-y-4 text-sm text-primary-300">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
-                <span>12 Healing Path, Sector 44<br />New Delhi – 110044, India</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-primary-400 flex-shrink-0" />
-                <a href="tel:+911234567890" className="hover:text-white transition-colors">+91 12345 67890</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-primary-400 flex-shrink-0" />
-                <a href="mailto:care@neurovita.in" className="hover:text-white transition-colors">care@neurovita.in</a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
-                <span>Mon – Sat: 8:00 AM – 7:00 PM<br />Sunday: 9:00 AM – 2:00 PM</span>
-              </li>
-            </ul>
+            <h3 className="text-cyan-400 text-xs uppercase tracking-widest mb-4">
+              Contact
+            </h3>
+
+            <div className="flex flex-col gap-4 text-white/60 text-sm">
+
+              <div className="flex gap-2">
+                <MapPin size={14} className="text-orange-400 mt-1" />
+                <span>
+                  12 Healing Path, Sector 44 <br />
+                  New Delhi – 110044, India
+                </span>
+              </div>
+
+              <div className="flex gap-2">
+                <Phone size={14} className="text-orange-400 mt-1" />
+                <span>+91 12345 67890</span>
+              </div>
+
+              <div className="flex gap-2">
+                <Clock size={14} className="text-cyan-400 mt-1" />
+                <span>
+                  Mon – Sat: 8:00 AM – 7:00 PM <br />
+                  Sunday: 9:00 AM – 2:00 PM
+                </span>
+              </div>
+
+            </div>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="font-display text-white text-lg mb-6">Health Newsletter</h3>
-            <p className="text-primary-300 text-sm mb-4">
-              Get rehabilitation tips, patient success stories, and health insights delivered to your inbox.
-            </p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full bg-primary-800 border border-primary-600 text-white placeholder-primary-400 px-4 py-3 text-sm focus:outline-none focus:border-primary-400"
-              />
-              <button
-                type="submit"
-                className="w-full bg-primary-500 hover:bg-primary-400 text-white py-3 text-sm font-medium transition-colors flex items-center justify-center gap-2"
-              >
-                Subscribe <ArrowRight size={14} />
-              </button>
-            </form>
-          </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-primary-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-400">
-          <span>© {new Date().getFullYear()} NeuroVita Rehabilitation Center. All rights reserved.</span>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-primary-200 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary-200 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary-200 transition-colors">NABH Accredited</a>
-          </div>
+      {/* Divider */}
+      <div className="h-px bg-white/10 mx-6" />
+
+      {/* Bottom */}
+      <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <span className="text-xs text-white/40">
+          © {new Date().getFullYear()} NeuroVita Rehabilitation Center. All rights reserved.
+        </span>
+
+        <div className="flex gap-6 text-xs text-white/40">
+          {["Privacy Policy", "Terms of Service", "NABH Accredited"].map((item, i) => (
+            <a key={i} href="#" className="hover:text-orange-400 transition">
+              {item}
+            </a>
+          ))}
         </div>
+
       </div>
+
     </footer>
   )
 }
