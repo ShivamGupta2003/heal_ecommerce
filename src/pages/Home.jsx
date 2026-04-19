@@ -66,14 +66,17 @@ function HeroSection() {
           </motion.p>
 
           {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 px-8 py-4 bg-sky-400 text-white font-semibold rounded-full text-lg hover:bg-sky-500 transition transform hover:scale-105"
-          >
-            START YOUR RECOVERY
-          </motion.button>
+
+          <Link to="/contact">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-10 px-8 py-4 bg-sky-400 text-white font-semibold rounded-full text-lg hover:bg-sky-500 transition transform hover:scale-105"
+            >
+              START YOUR RECOVERY
+            </motion.button>
+          </Link>
 
         </div>
       </Container>
