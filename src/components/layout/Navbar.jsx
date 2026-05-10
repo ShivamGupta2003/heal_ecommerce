@@ -381,7 +381,7 @@ export default function Navbar() {
                 borderBottom: '1px solid rgba(20,83,45,0.1)',
               }}>
                 <Link to="/" onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-                  <img src="/logo.png" alt="Logo" style={{ maxHeight: 44, width: 'auto', objectFit: 'contain' }} />
+                  <img src="/hii.png" alt="Logo" style={{ maxHeight: 44, width: 'auto', objectFit: 'contain' }} />
                   <span style={{ fontSize: 14, fontWeight: 600, color: '#14532d' }}>Patatram</span>
                 </Link>
 
