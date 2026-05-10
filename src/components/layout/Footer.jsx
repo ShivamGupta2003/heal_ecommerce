@@ -41,13 +41,13 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-6">
 
               <img
-                src="/logo.png"
+                src="/hii.png"
                 alt="Patatram Logo"
                 style={{
                   width: 44,
                   height: 44,
-                  objectFit: "contain",
-                  borderRadius: "8px"
+                  objectFit: "cover",
+                  borderRadius: "50%"
                 }}
               />
 
@@ -135,25 +135,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="h-px bg-white/10 mx-6" />
-
-      {/* Bottom */}
-      <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
-
-        <span className="text-xs text-white/40">
-          © {new Date().getFullYear()} NeuroVita Rehabilitation Center. All rights reserved.
-        </span>
-
-        <div className="flex gap-6 text-xs text-white/40">
-          {["Privacy Policy", "Terms of Service", "NABH Accredited"].map((item, i) => (
-            <a key={i} href="#" className="hover:text-orange-400 transition">
-              {item}
-            </a>
-          ))}
-        </div>
-
-      </div>
 
     </footer>
   )

@@ -212,14 +212,50 @@ export default function Navbar() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 80 }}>
 
             {/* Logo */}
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
-              <img src="/logo.png" alt="Logo" style={{ maxHeight: 60, width: 'auto', objectFit: 'contain' }} />
-              <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.3 }}>
-                <span style={{ fontSize: 14, fontWeight: 600, color: scrolled ? '#14532d' : '#fff' }}>
-                  HealthCare
+            <Link
+              to="/"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+                textDecoration: 'none'
+              }}
+            >
+              <img
+                src="/hii.png"
+                alt="Logo"
+                style={{
+                  width: 42,
+                  height: 42,
+                  borderRadius: '50%',
+                  objectFit: 'cover'
+                }}
+              />
+
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  lineHeight: 1.3
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: scrolled ? '#14532d' : '#fff'
+                  }}
+                >
+                  Patatram
                 </span>
-                <span style={{ fontSize: 10, color: scrolled ? '#9ca3af' : 'rgba(255,255,255,0.6)' }}>
-                  Excellence in care
+
+                <span
+                  style={{
+                    fontSize: 10,
+                    color: scrolled ? '#9ca3af' : 'rgba(255,255,255,0.6)'
+                  }}
+                >
+                  Rehabilation Center
                 </span>
               </div>
             </Link>
@@ -346,7 +382,7 @@ export default function Navbar() {
               }}>
                 <Link to="/" onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
                   <img src="/logo.png" alt="Logo" style={{ maxHeight: 44, width: 'auto', objectFit: 'contain' }} />
-                  <span style={{ fontSize: 14, fontWeight: 600, color: '#14532d' }}>HealthCare</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: '#14532d' }}>Patatram</span>
                 </Link>
 
                 <button
